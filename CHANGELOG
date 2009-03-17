@@ -1,0 +1,25 @@
+Substruct Changes
+
+March 15, 2009
+
+Substruct Changes
+
+For Rails version 2.2.2
+
+Removed
+- Removed old version of Active Merchant plugin - old version is not compatible with Rails 2.2.2 (generates errors)
+- Removed old version of Engines plugin - same reason
+
+
+Updated
+- Installed new version of Active Merchant.
+  To do:  I have yet to test checkout using Paypal and Authorize
+
+Debugged Views
+- Replaced some views code which are no longer working with Rails 2.2.2
+ 
+
+March 16, 2009
+
+Modified substruct.rake to fix plugin schema version error
+run rake substruct:db:bootstrap
