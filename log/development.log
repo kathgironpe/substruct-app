@@ -17464,3 +17464,58 @@ ActionController::RoutingError (No route matches "/loading.html" with {:method=>
     script/server:3
 
 Rendering /usr/local/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+  [4;36;1mSQL (54.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (110.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPreference Columns (677.0ms)[0m   [0;1mSHOW FIELDS FROM `preferences`[0m
+  [4;35;1mPreference Load (49.2ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'use_smtp_tls_patch') LIMIT 1[0m
+  [4;36;1mPreference Load (15.4ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'mail_host') LIMIT 1[0m
+  [4;35;1mPreference Load (9.8ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'mail_port') LIMIT 1[0m
+  [4;36;1mPreference Load (11.0ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'mail_auth_type') LIMIT 1[0m
+
+
+Processing ContentNodesController#show_by_name (for 127.0.0.1 at 2009-03-21 20:26:56) [GET]
+  Parameters: {"name"=>"home"}
+  [4;35;1mSQL (26.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPreference Load (8.8ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'store_name') LIMIT 1[0m
+  [4;36;1mTag Load (229.0ms)[0m   [0;1mSELECT * FROM `tags` WHERE (parent_id IS NULL OR parent_id = 0) ORDER BY -rank DESC[0m
+  [4;35;1mOrderUser Columns (95.5ms)[0m   [0mSHOW FIELDS FROM `order_users`[0m
+  [4;36;1mOrderUser Load (3.2ms)[0m   [0;1mSELECT * FROM `order_users` WHERE (`order_users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mSection Load (32.1ms)[0m   [0mSELECT * FROM `sections` WHERE (parent_id IS NULL OR parent_id = 0) ORDER BY -rank DESC[0m
+  [4;36;1mContentNode Load (69.6ms)[0m   [0;1mSELECT * FROM `content_nodes` WHERE (name = 'home') LIMIT 1[0m
+  [4;35;1mContentNode Columns (8.8ms)[0m   [0mSHOW FIELDS FROM `content_nodes`[0m
+  [4;36;1mPage Columns (12.3ms)[0m   [0;1mSHOW FIELDS FROM `content_nodes`[0m
+Rendering template within layouts/main
+Rendering content_nodes/show_by_name
+Rendered shared/_flash (0.4ms)
+Completed in 643ms (View: 80, DB: 486) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mPreference Load (22.4ms)[0m   [0mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'store_test_transactions') LIMIT 1[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-03-21 20:27:00) [GET]
+  [4;36;1mPreference Load (0.2ms)[0m   [0;1mSELECT * FROM `preferences` WHERE (`preferences`.`name` = 'store_name') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM `tags` WHERE (parent_id IS NULL OR parent_id = 0) ORDER BY -rank DESC[0m
+  [4;36;1mOrderUser Load (0.2ms)[0m   [0;1mSELECT * FROM `order_users` WHERE (`order_users`.`id` IS NULL) LIMIT 1[0m
+  [4;35;1mOrder Load (74.2ms)[0m   [0mSELECT * FROM `orders` WHERE (id = NULL) LIMIT 1[0m
+  [4;36;1mOrder Columns (33.4ms)[0m   [0;1mSHOW FIELDS FROM `orders`[0m
+  [4;35;1mOrderStatusCode Columns (18.4ms)[0m   [0mSHOW FIELDS FROM `order_status_codes`[0m
+  [4;36;1mOrderStatusCode Load (10.1ms)[0m   [0;1mSELECT * FROM `order_status_codes` WHERE (`order_status_codes`.`name` = 'CART') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Exists (0.7ms)[0m   [0;1mSELECT `orders`.id FROM `orders` WHERE (`orders`.`order_number` = 0) LIMIT 1[0m
+  [4;35;1mPromotion Load (20.5ms)[0m   [0mSELECT * FROM `promotions` WHERE (code = NULL) LIMIT 1[0m
+  [4;36;1mOrder Load (14.1ms)[0m   [0;1mSELECT * FROM `orders` WHERE (order_number = 946216560) LIMIT 1[0m
+  [4;35;1mOrder Create (77.7ms)[0m   [0mINSERT INTO `orders` (`tax`, `shipping_address_id`, `billing_address_id`, `created_on`, `notes`, `promotion_id`, `shipped_on`, `order_shipping_type_id`, `order_number`, `referer`, `auth_transaction_id`, `order_account_id`, `product_cost`, `order_user_id`, `order_status_code_id`, `shipping_cost`) VALUES(0.0, 0, 0, '2009-03-21 12:27:00', NULL, 0, NULL, 1, 946216560, NULL, NULL, 0, 0.0, NULL, 1, 0.0)[0m
+  [4;36;1mSQL (35.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTag Load (0.6ms)[0m   [0mSELECT * FROM `tags` ORDER BY name ASC[0m
+  [4;36;1mProduct Columns (48.3ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mProduct Load (42.8ms)[0m   [0mSELECT * FROM `items` WHERE (
+ CURRENT_DATE() >= DATE(items.date_available)
+ AND items.is_discontinued = 0
+ OR (items.is_discontinued = 1 AND (items.quantity > 0 OR items.variation_quantity > 0))
+ ) AND ( (`items`.`type` = 'Product' ) ) ORDER BY name ASC LIMIT 0, 10[0m
+Rendering template within layouts/main
+Rendering store/index
+Rendered shared/_flash (0.4ms)
+Completed in 510ms (View: 22, DB: 400) | 200 OK [http://localhost/store]

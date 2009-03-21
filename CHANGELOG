@@ -23,3 +23,7 @@ March 16, 2009
 
 Modified substruct.rake to fix plugin schema version error
 run rake substruct:db:bootstrap
+
+March 21, 2009
+
+Replaced deprecated method "render_partial" with render
