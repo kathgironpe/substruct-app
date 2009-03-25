@@ -27,3 +27,7 @@ run rake substruct:db:bootstrap
 March 21, 2009
 
 Replaced deprecated method "render_partial" with render
+
+March 25, 2009
+
+Replaced deprecated code "render_component"

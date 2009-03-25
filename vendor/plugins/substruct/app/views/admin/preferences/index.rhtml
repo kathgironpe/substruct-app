@@ -20,16 +20,8 @@
 				</p>
 				<p>
 					<%= make_label('Your Country', true) %>
-					<%= 
-						render_component(
-							:controller => "countries",
-					    :action => "complete_select_list",
-					    :params => {
-								:select_name => 'prefs[store_home_country]', 
-								:selected => @prefs['store_home_country'].value
-							}
-						) 
-					%>
+					<%=  select("prefs[store_home_country]", "country_id", Country.find(:all, :conditions => ['is_obsolete != ?', 1],
+ :order => 'rank, name ASC').collect {|c| [ c.name, c.id ] }, {:prompt => 'Select Country'}) %>
 				</p>
 				<p>
 					<label>

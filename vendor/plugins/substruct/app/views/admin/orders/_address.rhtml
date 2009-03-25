@@ -50,9 +50,8 @@
       show_obsolete ||= false
 		%>
 		<%= make_label('Country') %>
-		<%= render_component(:controller => "countries",
-		                      :action => show_obsolete ? "complete_select_list" : "select_list",
-		                      :params => {:select_name => "#{address_type}_address", :selected => selected_country}) %>
+	<%=  select("#{address_type}_address", "country_id", Country.find(:all, :conditions => ['is_obsolete != ?', 1],
+ :order => 'rank, name ASC').collect {|c| [ c.name, c.id ] }, {:prompt => 'Select Country'}) %>
 	</div>
 	<div class="clear">&nbsp;</div>
 
