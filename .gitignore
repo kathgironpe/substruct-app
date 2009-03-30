@@ -1,0 +1,11 @@
+log/*.log
+.DS_Store
+.rake_tasks
+public/system/*
+tmp
+**/*.db
+*~
+db/*.sql
+db/*.sqlite3
+
+
