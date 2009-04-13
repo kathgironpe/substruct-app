@@ -1,4 +1,5 @@
 class Admin::TagsController < Admin::BaseController
+skip_before_filter :verify_authenticity_token
   def index
     list
     render :action => 'list'
