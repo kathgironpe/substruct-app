@@ -31,3 +31,21 @@ Replaced deprecated method "render_partial" with render
 March 25, 2009
 
 Replaced deprecated code "render_component"
+
+
+April 12, 2009
+Fixed some problem with editing tags and editing sections (AJAX). 
+There are other problems which I encountered in relation to ajax features like add to cart but I have not added the changes. In case you experience problems, regarding add to cart and other ajax features, do send me a message. 
+
+April 18, 2009
+Minor changes. Deprecation warning on content_node list. 
+
+
+Final Notes:
+
+I also recommend using Spree e-commerce app which supports several payment gateways apart from Paypal and Authorize. 
+What is basically important in every e-commerce application or any application I should say is the flexibility and the ability make changes easily as needed. 
+
+Every client or every project is different. To be high or even a mid-level web developer, you need to have the ability to meet client requirements and not give them something very generic. 
+
+Rails 2.2.2 by itself is powerful because you can take advantage of the built-in internationalization feature, thanks to Sven Fuchs and company. 

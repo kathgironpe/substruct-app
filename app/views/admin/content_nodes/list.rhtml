@@ -60,7 +60,7 @@
     <% for content_node in @content_nodes %>
     <tr class="<%= alternate %>">
       <td>
-        <%= link_to truncate(content_node.name, 20), {:action => 'edit', :id => content_node} %>
+        <%= link_to truncate(content_node.name, :length => 20), {:action => 'edit', :id => content_node} %>
         <br/>
         <br/>
         <span class="info"><%= link_to 'Show here', {:action => 'show', :id => content_node}, :class=> 'normal' %></span>
@@ -70,7 +70,7 @@
       <td>
         <%= content_node.title %>
       </td>
-      <td><%= number_with_delimiter(content_node.content.length, ',') %> characters</td>
+      <td><%= number_with_delimiter(content_node.content.length,:delimiter => ',') %> characters</td>
       <td><%= content_node.display_on.strftime("%m/%d/%y") %></td>
 			<td><%= content_node.class.to_s %></td>
     </tr>
