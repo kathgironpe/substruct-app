@@ -48,4 +48,5 @@ What is basically important in every e-commerce application or any application I
 
 Every client or every project is different. To be high or even a mid-level web developer, you need to have the ability to meet client requirements and not give them something very generic. 
 
+It would be great to create an e-commerce application that would work with Ruby 1.9.1 and Rails 2.3.2 or edge rails. 
 Rails 2.2.2 by itself is powerful because you can take advantage of the built-in internationalization feature, thanks to Sven Fuchs and company. 
